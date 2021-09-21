@@ -46,7 +46,7 @@ object Theme extends ThemeObject {
     "blue2",
     "blue3",
     "blue-marble",
-    "canvas",
+    "canvas2",
     "wood",
     "wood2",
     "wood3",
@@ -64,7 +64,7 @@ object Theme extends ThemeObject {
     "newspaper",
     "purple",
     "purple-diag",
-    "pink",
+    "pink-pyramid",
     "ic",
     "horsey"
   ) map { name =>
