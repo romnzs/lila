@@ -185,6 +185,7 @@ object layout {
   private val dataI18n          = attr("data-i18n")
   private val dataNonce         = attr("data-nonce")
   private val dataAnnounce      = attr("data-announce")
+  private val dataAnnounceI18n  = attr("data-announce-i18n")
   val dataSoundSet              = attr("data-sound-set")
   val dataTheme                 = attr("data-theme")
   val dataPieceSet              = attr("data-piece-set")
@@ -279,6 +280,7 @@ object layout {
           dataTheme := ctx.currentBg,
           dataPieceSet := ctx.currentPieceSet.name,
           dataAnnounce := AnnounceStore.get.map(a => safeJsonValue(a.json)),
+          dataAnnounceI18n := safeJsonValue(i18nJsObject(announceI18nKeys)),
           style := zoomable option s"--zoom:${ctx.zoom}"
         )(
           blindModeForm,
@@ -301,7 +303,7 @@ object layout {
           )(body),
           ctx.me.exists(_.enabled) option div(
             id := "friend_box",
-            dataI18n := safeJsonValue(i18nJsObject(i18nKeys))
+            dataI18n := safeJsonValue(i18nJsObject(friendBoxI18nKeys))
           )(
             div(cls := "friend_box_title")(trans.nbFriendsOnline.plural(0, iconTag(""))),
             div(cls := "content_wrap none")(
@@ -391,5 +393,7 @@ object layout {
       )
   }
 
-  private val i18nKeys = List(trans.nbFriendsOnline.key)
+  private val friendBoxI18nKeys = List(trans.nbFriendsOnline.key)
+
+  private val announceI18nKeys = AnnounceStore.predefinedMessageI18Keys.map(_.key)
 }
