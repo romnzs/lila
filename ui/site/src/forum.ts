@@ -129,6 +129,8 @@ lichess.load.then(() => {
       });
   });
 
+  const reactionErrorMsg = $('.forum-topic__posts').data('reactionError');
+
   $('.forum').on('click', '.reactions-auth button', e => {
     const href = e.target.getAttribute('data-href');
     if (href) {
@@ -141,7 +143,7 @@ lichess.load.then(() => {
           $rels.removeClass('loading');
         },
         _ => {
-          lichess.announce({ msg: 'Failed to send forum post reaction' });
+          lichess.announce({ msg: reactionErrorMsg });
         }
       );
     }

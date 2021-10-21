@@ -52,7 +52,7 @@ export default function (opts: ChallengeOpts, data: ChallengeData, redraw: () =>
           c.declined = true;
           xhr
             .text(`/challenge/${id}/decline`, { method: 'post', body: xhr.form({ reason }) })
-            .catch(() => lichess.announce({ msg: 'Failed to send challenge decline' }));
+            .catch(() => lichess.announce({ msg: trans('failedToSendChallengeDecline') }));
         }
       });
     },
@@ -62,7 +62,7 @@ export default function (opts: ChallengeOpts, data: ChallengeData, redraw: () =>
           c.declined = true;
           xhr
             .text(`/challenge/${id}/cancel`, { method: 'post' })
-            .catch(() => lichess.announce({ msg: 'Failed to send challenge cancellation' }));
+            .catch(() => lichess.announce({ msg: trans('failedToSendChallengeCancellation') }));
         }
       });
     },

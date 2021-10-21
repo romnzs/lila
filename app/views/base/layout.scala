@@ -100,6 +100,7 @@ object layout {
     spaceless(s"""<div>
   <a id="challenge-toggle" class="toggle link">
     <span title="${trans.challenge.challenges
+      .txt()}" data-load-error-message="${trans.challenge.failedToLoadChallenges
       .txt()}" class="data-count" data-count="${ctx.nbChallenges}" data-icon=""></span>
   </a>
   <div id="challenge-app" class="dropdown"></div>
@@ -107,7 +108,8 @@ object layout {
 <div>
   <a id="notify-toggle" class="toggle link">
     <span title="${trans.notifications
-      .txt()}" class="data-count" data-count="${ctx.nbNotifications}" data-icon=""></span>
+      .txt()}" class="data-count" data-count="${ctx.nbNotifications}" data-count="${ctx.nbNotifications}" data-icon="" data-load-error-message="${trans.failedToLoadNotifications
+      .txt()}" data-clear-error-message="${trans.failedToClearNotifications.txt()}"></span>
   </a>
   <div id="notify-app" class="dropdown"></div>
 </div>""")

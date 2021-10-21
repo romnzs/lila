@@ -48,6 +48,7 @@ export default function () {
         () =>
           (instance = window.LichessChallenge($el[0], {
             data,
+            loadErrorMessage: $toggle.find('span').data('loadErrorMessage'),
             show() {
               if (!isVisible('#challenge-app')) $toggle.trigger('click');
             },
@@ -71,6 +72,7 @@ export default function () {
     // notifyApp
     let instance: any, booted: boolean;
     const $toggle = $('#notify-toggle'),
+      $toggleSpan = $toggle.find('span'),
       selector = '#notify-app';
 
     const load = (data?: any, incoming = false) => {
@@ -82,10 +84,14 @@ export default function () {
         () =>
           (instance = window.LichessNotify($el.empty()[0], {
             data,
+            errorMessages: {
+              load: $toggleSpan.data('loadErrorMessage'),
+              clear: $toggleSpan.data('clearErrorMessage'),
+            },
             incoming,
             isVisible: () => isVisible(selector),
             setCount(nb: number) {
-              $toggle.find('span').data('count', nb);
+              $toggleSpan.data('count', nb);
             },
             show() {
               if (!isVisible(selector)) $toggle.trigger('click');

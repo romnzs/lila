@@ -25,7 +25,7 @@ export function ctrl(data: BoardData, trans: Trans, redraw: Redraw, close: Close
     () =>
       xhr
         .text('/pref/zoom?v=' + readZoom(), { method: 'post' })
-        .catch(() => lichess.announce({ msg: 'Failed to save board size' })),
+        .catch(() => lichess.announce({ msg: trans.noarg('failedToSaveBoardSize') })),
     1000
   );
 
@@ -39,7 +39,7 @@ export function ctrl(data: BoardData, trans: Trans, redraw: Redraw, close: Close
           body: xhr.form({ is3d: v }),
           method: 'post',
         })
-        .then(lichess.reload, _ => lichess.announce({ msg: 'Failed to save geometry  preference' }));
+        .then(lichess.reload, _ => lichess.announce({ msg: trans.noarg('failedToSaveGeometryPreference') }));
       redraw();
     },
     readZoom,

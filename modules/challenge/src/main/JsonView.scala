@@ -96,6 +96,8 @@ final class JsonView(
     trans.accept,
     trans.decline,
     trans.viewInFullSize,
-    trans.cancel
+    trans.cancel,
+    trans.challenge.failedToSendChallengeDecline,
+    trans.challenge.failedToSendChallengeCancellation
   ).map(_.key)
 }

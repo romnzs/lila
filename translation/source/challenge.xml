@@ -22,4 +22,7 @@
   <string name="declineVariant">I'm not willing to play this variant right now.</string>
   <string name="declineNoBot">I'm not accepting challenges from bots.</string>
   <string name="declineOnlyBot">I'm only accepting challenges from bots.</string>
+  <string name="failedToSendChallengeDecline">Failed to send challenge decline</string>
+  <string name="failedToSendChallengeCancellation">Failed to send challenge cancellation</string>
+  <string name="failedToLoadChallenges">Failed to load challenges</string>
 </resources>

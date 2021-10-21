@@ -47,7 +47,7 @@ export default function makeCtrl(opts: NotifyOpts, redraw: Redraw): Ctrl {
   const loadPage = (page: number) =>
     xhr.json(xhr.url('/notify', { page: page || 1 })).then(
       d => update(d, false),
-      _ => lichess.announce({ msg: 'Failed to load notifications' })
+      _ => lichess.announce({ msg: opts.errorMessages.load })
     );
 
   function nextPage() {
@@ -98,7 +98,7 @@ export default function makeCtrl(opts: NotifyOpts, redraw: Redraw): Ctrl {
       })
       .then(
         _ => update(emptyNotifyData, false),
-        _ => lichess.announce({ msg: 'Failed to clear notifications' })
+        _ => lichess.announce({ msg: opts.errorMessages.clear })
       );
   }
 

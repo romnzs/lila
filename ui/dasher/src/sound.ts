@@ -33,7 +33,7 @@ export function ctrl(raw: string[], trans: Trans, redraw: Redraw, close: Close):
         body: xhr.form({ set }),
         method: 'post',
       })
-      .catch(() => lichess.announce({ msg: 'Failed to save sound preference' }));
+      .catch(() => lichess.announce({ msg: trans.noarg('failedToSaveSoundPreference') }));
 
   return {
     makeList() {

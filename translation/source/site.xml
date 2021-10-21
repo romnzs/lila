@@ -483,6 +483,7 @@ computer analysis, game chat and shareable URL.</string>
   <string name="replyToThisTopic">Reply to this topic</string>
   <string name="reply">Reply</string>
   <string name="message">Message</string>
+  <string name="failedToSendForumPostReaction">Failed to send forum post reaction</string>
   <string name="createTheTopic">Create the topic</string>
   <string name="reportAUser">Report a user</string>
   <string name="user">User</string>
@@ -517,6 +518,7 @@ computer analysis, game chat and shareable URL.</string>
   <string name="letOtherPlayersChallengeYou">Let other players challenge you</string>
   <string name="letOtherPlayersInviteYouToStudy">Let other players invite you to study</string>
   <string name="sound">Sound</string>
+  <string name="failedToSaveSoundPreference">Failed to save sound preference</string>
   <string name="none">None</string>
   <string name="fast">Fast</string>
   <string name="normal">Normal</string>
@@ -701,6 +703,11 @@ computer analysis, game chat and shareable URL.</string>
   <string name="boardTheme">Board theme</string>
   <string name="boardSize">Board size</string>
   <string name="pieceSet">Piece set</string>
+  <string name="failedToSaveBackgroundPreference">Failed to save background preference</string>
+  <string name="failedToSaveGeometryPreference">Failed to save geometry preference</string>
+  <string name="failedToSaveThemePreference">Failed to save theme preference</string>
+  <string name="failedToSaveBoardSize">Failed to save board size</string>
+  <string name="failedToSavePieceSetPreference">Failed to save piece set preference</string>
   <string name="embedInYourWebsite">Embed in your website</string>
   <string name="usernameAlreadyUsed">This username is already in use, please try another one.</string>
   <string name="usernamePrefixInvalid">The username must start with a letter.</string>
@@ -714,6 +721,8 @@ computer analysis, game chat and shareable URL.</string>
   <string name="invalidFen">Invalid FEN</string>
   <string name="custom">Custom</string>
   <string name="notifications">Notifications</string>
+  <string name="failedToLoadNotifications">Failed to load notifications</string>
+  <string name="failedToClearNotifications">Failed to clear notifications</string>
   <string name="perfRatingX">Rating: %s</string>
   <plurals name="nbSecondsToPlayTheFirstMove">
     <item quantity="one">%s second to play the first move</item>

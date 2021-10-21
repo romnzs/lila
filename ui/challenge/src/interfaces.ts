@@ -1,5 +1,6 @@
 export interface ChallengeOpts {
   data?: ChallengeData;
+  loadErrorMessage: string;
   show(): void;
   setCount(nb: number): void;
   pulse(): void;

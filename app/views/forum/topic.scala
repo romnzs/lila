@@ -106,7 +106,10 @@ object topic {
           topic.name
         ),
         pager,
-        div(cls := "forum-topic__posts expand-text")(
+        div(
+          cls := "forum-topic__posts expand-text",
+          attr("data-reaction-error") := trans.failedToSendForumPostReaction.txt()
+        )(
           posts.currentPageResults.map { p =>
             post.show(
               categ,

@@ -47,7 +47,7 @@ export function ctrl(
           body: xhr.form({ set: t }),
           method: 'post',
         })
-        .catch(() => lichess.announce({ msg: 'Failed to save piece set  preference' }));
+        .catch(() => lichess.announce({ msg: trans.noarg('failedToSavePieceSetPreference') }));
       redraw();
     },
     open,
